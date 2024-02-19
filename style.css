@@ -1,0 +1,38 @@
+* {
+    font-family: "Kode Mono", monospace;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h3 {
+    text-align: center;
+}
+
+#game-library {
+    position: relative;
+    width: 100%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.game {
+    position: relative;
+    margin: 10px;
+    text-decoration: none;
+}
+
+.game div {
+    padding: 3px 8px 3px 8px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #000000;
+    border-radius: 20px;
+    font-size: 40px;
+    color: #000000;
+    text-align: center;
+    user-select: none;
+}
