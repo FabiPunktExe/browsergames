@@ -28,6 +28,12 @@ const ruleGenerators = [
             test: password => (password.match(/[A-Z]/g) || []).length >= uppercaseLetters
         }
     },
+    () => {
+        return {
+            description: `Your password must include a roman numeral`,
+            test: password => (password.match(/[IVXLCDM]/g) || []).length > 0
+        }
+    },
     password => {
         const numbers = password.match(/[0-9]/g) || []
         var sum = 23 + Math.floor(Math.random() * 3)
