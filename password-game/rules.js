@@ -72,5 +72,11 @@ const ruleGenerators = [
             description: `The roman numerals in your password should multiply to ${sum}`,
             test: password => calculate(password) == sum
         }
+    },
+    () => {
+        return {
+            description: "Maximum password length is 32 characters",
+            test: password => password.length <= 32
+        }
     }
 ]
