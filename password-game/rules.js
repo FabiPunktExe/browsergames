@@ -30,7 +30,7 @@ const ruleGenerators = [
     },
     () => {
         return {
-            description: `Your password must include a roman numeral`,
+            description: `Your password must contain a roman numeral`,
             test: password => (password.match(/[IVXLCDM]/g) || []).length > 0
         }
     },
@@ -70,7 +70,20 @@ const ruleGenerators = [
         const sum = calculate(password) + 30 + Math.floor(Math.random() * 7)
         return {
             description: `The roman numerals in your password should multiply to ${sum}`,
-            test: password => calculate(password) == sum
+            test: password => calculate(password) % sum == 0
+        }
+    },
+    () => {
+        const presidents = [
+            {name: "George Washington", date: /22.0?2.1732/g},
+            {name: "George Washington", date: /22.0?2.1732/g},
+            {name: "George Washington", date: /22.0?2.1732/g},
+            {name: "George Washington", date: /22.0?2.1732/g}
+        ]
+        const president = presidents[Math.floor(Math.random() * presidents.length)]
+        return {
+            description: `Your password must contain the birth date of ${president.name}`,
+            test: password => president.date.test(password)
         }
     },
     () => {
