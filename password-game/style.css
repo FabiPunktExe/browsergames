@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Kristen ITC";
+    src: url("KristenITCRegularotf") format("opentype");
+}
+
 * {
     font-family: "Kristen ITC", "Comic Sans MS", Calibri;
 }
@@ -20,7 +25,7 @@ html, body {
 #password {
     margin: 0 auto 30px auto;
     padding: 5px 10px 5px 10px;
-    width: min(100%, 500px);
+    width: min(90%, 500px);
     display: block;
     font-size: 20px;
     border-color: #000000;
@@ -45,7 +50,7 @@ html, body {
     position: relative;
     margin: 10px auto 0 auto;
     padding: 3px 8px 3px 8px;
-    width: min(100%, 500px);
+    width: min(90%, 500px);
     border-style: solid;
     border-width: 3px;
     border-radius: 20px;

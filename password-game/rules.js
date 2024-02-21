@@ -8,21 +8,21 @@ const ruleGenerators = [
         }
     },
     password => {
-        const numbers = (password.match(/[0-9]/g) || []).length + Math.floor(Math.random() * 4)
+        const numbers = (password.match(/[0-9]/g) || []).length + 2 + Math.floor(Math.random() * 3)
         return {
             description: `Your password must contain at least ${numbers} numbers`,
             test: password => (password.match(/[0-9]/g) || []).length >= numbers
         }
     },
     password => {
-        const specialCharacters = (password.match(/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g) || []).length + Math.floor(Math.random() * 3)
+        const specialCharacters = (password.match(/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g) || []).length + 1 + Math.floor(Math.random() * 2)
         return {
             description: `Your password must contain at least ${specialCharacters} special characters`,
             test: password => (password.match(/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g) || []).length >= specialCharacters
         }
     },
     password => {
-        const uppercaseLetters = (password.match(/[A-Z]/g) || []).length + Math.floor(Math.random() * 3)
+        const uppercaseLetters = (password.match(/[A-Z]/g) || []).length + 1 + Math.floor(Math.random() * 3)
         return {
             description: `Your password must contain at least ${uppercaseLetters} uppercase letters`,
             test: password => (password.match(/[A-Z]/g) || []).length >= uppercaseLetters
@@ -36,7 +36,7 @@ const ruleGenerators = [
     },
     password => {
         const numbers = password.match(/[0-9]/g) || []
-        var sum = 23 + Math.floor(Math.random() * 3)
+        var sum = 33 + Math.floor(Math.random() * 3)
         numbers.forEach(number => sum += parseInt(number))
         return {
             description: `The sum of digits in your password has to be ${sum}`,
@@ -74,16 +74,16 @@ const ruleGenerators = [
         }
     },
     () => {
-        const presidents = [
-            {name: "George Washington", date: /22.0?2.1732/g},
-            {name: "George Washington", date: /22.0?2.1732/g},
-            {name: "George Washington", date: /22.0?2.1732/g},
-            {name: "George Washington", date: /22.0?2.1732/g}
-        ]
-        const president = presidents[Math.floor(Math.random() * presidents.length)]
+        const celebrity = celebrities[Math.floor(Math.random() * celebrities.length)]
         return {
-            description: `Your password must contain the birth date of ${president.name}`,
-            test: password => president.date.test(password)
+            description: `Your password must contain the birth date of ${celebrity.name}`,
+            test: password => celebrity.birth_date.test(password)
+        }
+    },
+    () => {
+        return {
+            description: "Please take care of my pufferfish Puffi 🐡 and protect him in a secure password",
+            test: password => /🐡/g.test(password).length == 1
         }
     },
     () => {
