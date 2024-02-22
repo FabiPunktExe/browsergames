@@ -34,7 +34,7 @@ html, body {
     border-width: 3px;
     outline: none;
     word-break: break-all;
-    white-space: break-spaces;
+    /*white-space: break-spaces;*/
     word-wrap: break-word;
     user-select: none;
 }
