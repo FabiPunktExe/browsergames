@@ -82,8 +82,8 @@ const ruleGenerators = [
     },
     () => {
         return {
-            description: "Please take care of my pufferfish Puffi 🐡 and protect him in a secure password",
-            test: password => /🐡/g.test(password).length == 1
+            description: "Please take care of my pufferfish Puffy 🐡 and protect him in a secure password",
+            test: password => /\u1F421/g.test(password).length >= 1
         }
     },
     () => {
