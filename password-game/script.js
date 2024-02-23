@@ -62,7 +62,7 @@ function generateNextRule(password) {
 
 // Prüft das Passwort auf alle Regeln
 function checkPassword() {
-    const password = document.getElementById("password").innerText;
+    const password = document.getElementById("password").innerHTML;
 
     let violatedRules = 0
     for (let rule = 0; rule < rules.length; rule++) {
